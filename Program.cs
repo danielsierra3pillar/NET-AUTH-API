@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using AuthApi.Data; 
+using AuthApi.Repositories; 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
