@@ -42,4 +42,21 @@ public class AuthController : ControllerBase
 
         return Ok();
     }
+
+
+    [HttpGet("users")]
+    public async Task<IActionResult> GetUsers()
+    {
+        var users = await _userRepository.GetAllUsers();
+
+        // Optional: map users to a DTO before returning
+        var userList = users.Select(user => new UsersDto
+        {
+            Id = user.Id,
+            Email = user.Email
+        });
+
+        return Ok(userList);
+    }
+
 }

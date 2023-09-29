@@ -9,4 +9,6 @@ public interface IUserRepository
 {
     Task<User> GetUserByEmail(string email);
     Task CreateUser(User user);
+    Task<IEnumerable<User>> GetAllUsers();
+
 }
